@@ -12,15 +12,21 @@ able to set up Jooomla website with MySQL database server at its backend.
 Joomla runs on port number 8085 of your Base OS
 
 To access Database while sign up use:
-      MYSQL_ROOT_PASSWORD: vk01
-      MYSQL_USER: vikash
-      MYSQL_PASSWORD: vk01
-      MYSQL_DATABASE: jmdb
+
+MYSQL_ROOT_PASSWORD: vk01
+MYSQL_USER: vikash
+MYSQL_PASSWORD: vk01
+MYSQL_DATABASE: jmdb
+
+Download docker-compose version 3
+
+First add this docker-compose.yml to a directory and from that directory:
 
 To run the file :
 docker-compose up
 
-
+To stop the contaiers:
+docker-compose stop
 
 To close the program and remove the running containers :
 docker-compose down
