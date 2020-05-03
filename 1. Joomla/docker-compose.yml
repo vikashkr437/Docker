@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  joomladb:
+    image: mysql:5.6
+    volumes:
+      - mysql_storage:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: vk01
+      MYSQL_USER: vikash
+      MYSQL_PASSWORD: vk01
+      MYSQL_DATABASE: jmdb
+
+  joomlaos:
+    image: joomla
+    restart: always
+    depends_on:
+      - joomladb
+    ports:
+      - 8085:80
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: vk01
+      JOOMLA_DB_USER: vikash
+      JOOMLA_DB_NAME: jmdb
+volumes:
+    mysql_storage:
